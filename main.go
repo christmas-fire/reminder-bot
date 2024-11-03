@@ -15,15 +15,6 @@ const (
 	batchSize   = 100
 )
 
-/*
-			TOKEN:
-	7809238484:AAE0v-t6q0kqpjHbIcEEWggs9C3t58pyvA4
-
-			TO RUN BOT:
-	go build
-	.\reminder-bot -tg-bot-token '7809238484:AAE0v-t6q0kqpjHbIcEEWggs9C3t58pyvA4'
-*/
-
 func main() {
 	eventsProcessor := telegram.New(
 		tgClient.New(tgBotHost, mustToken()),
