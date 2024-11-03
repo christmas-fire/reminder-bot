@@ -11,12 +11,20 @@ import (
 
 const (
 	tgBotHost   = "api.telegram.org"
-	storagePath = "storage"
+	storagePath = "files_storage"
 	batchSize   = 100
 )
 
-func main() {
+/*
+			TOKEN:
+	7809238484:AAE0v-t6q0kqpjHbIcEEWggs9C3t58pyvA4
 
+			TO RUN BOT:
+	go build
+	.\reminder-bot -tg-bot-token '7809238484:AAE0v-t6q0kqpjHbIcEEWggs9C3t58pyvA4'
+*/
+
+func main() {
 	eventsProcessor := telegram.New(
 		tgClient.New(tgBotHost, mustToken()),
 		files.New(storagePath),
@@ -33,7 +41,7 @@ func main() {
 
 func mustToken() string {
 	token := flag.String(
-		"token-bot-token",
+		"tg-bot-token",
 		"",
 		"token for access to telegram bot",
 	)

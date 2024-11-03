@@ -21,7 +21,7 @@ func (p *Processor) doCmd(text string, chatID int, username string) error {
 	log.Printf("got new command '%s' from '%s'", text, username)
 
 	if isAddCmd(text) {
-		p.savePage(chatID, text, username)
+		return p.savePage(chatID, text, username)
 	}
 
 	switch text {
